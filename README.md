@@ -6,25 +6,25 @@ All credits should be redirected to the absolute genius, Topjohnwu, the creater 
 # Magisk-Binaries
 magisk binaries extracted from a magisk apk i built from the source code, includes: the impossible to find: magiskboot, magiskinit, busybox, magisk, and more. this only supports devices with an arm64 architecture, working on the other ones.
 
-DO NOT USE THE SCRIPT UNLESS YOU ARE ABLE TO CUSTOMIZE IT AND FIX ANY ERRORS I MADE WHILE WRITING IT.  ADDITIONALLY THE SCRIPT HAS THE OPTION TO TAKE A REGULAR BOOT.IMG AND PATCH IT AND FLASH IT IN FASTBOOT FOR YOU. ONLY IF YOU UNCOMMENT THE LAST COUPLE LINES AND EDIT IT. 
+DO NOT USE THE SCRIPT UNLESS YOU ARE ABLE TO CUSTOMIZE IT AND FIX ANY ERRORS I MADE WHILE WRITING IT.  ADDITIONALLY THE SCRIPT HAS THE OPTION TO TAKE A REGULAR BOOT.IMG AND PATCH IT AND FLASH IT IN FASTBOOT FOR YOU. ONLY IF YOU UNCOMMENT THE LAST COUPLE LINES AND EDIT IT. (I AM GOING TO GET HELP FROM A ONE OF MY CLOSEST FRIENDS SE7EN (SHOT OUT TO HIM FOR ENCOURAGING ME TO DO ALL THE WORK IM DOING) PERFECTING THE SCRIPT)
 HOW TO USE:
 im going to assume you know your way arount linux and git... so:
 1. Clone this repository  
 2. cd Magisk-Binaries
 3. run chmod +x on any executanle. ***make sure its an executable: eg. $ file magiskboot outpt: =linux executable.....
 
-$ git clone https://github.com/avef100/Magisk-Binaries
-$ cd Magisk-Bnaries
-$ chmod 755 magiskboot
-$ file magiskboot  #double check output says executable
+$ ./git clone https://github.com/avef100/Magisk-Binaries
+$ ./cd Magisk-Bnaries
+$ ./chmod 755 magiskboot
+$ ./file magiskboot  #double check output says executable
 
 EXTRACT YOUR BOOT IMAGE--FROM ROOTED PHONE (OTHERWISE GET IT FROM AP_XXXX_...tar.md5 INF FIRMWARE PACKAGE)
 
-$ adb shell
-$ su
-$ dd if=/dev/block/by-name/boot of=/sdcard/boot.img
-$ exit
-$ adb pull /sdcard/boot.img
+$ ./adb shell
+$ ./su
+$ ./dd if=/dev/block/by-name/boot of=/sdcard/boot.img
+$ ./exit
+$ ./adb pull /sdcard/boot.img
 
     NOW FOR THE GOOD PART
 A. unpacking your boot.img
