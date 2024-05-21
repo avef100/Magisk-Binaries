@@ -14,20 +14,28 @@ im going to assume you know your way arount linux and git... so:
 3. run chmod +x on any executanle. ***make sure its an executable: eg. $ file magiskboot outpt: =linux executable.....
 
 $ ./git clone https://github.com/avef100/Magisk-Binaries
+
 $ ./cd Magisk-Bnaries
+
 $ ./chmod 755 magiskboot
+
 $ ./file magiskboot  #double check output says executable
 
 EXTRACT YOUR BOOT IMAGE--FROM ROOTED PHONE (OTHERWISE GET IT FROM AP_XXXX_...tar.md5 INF FIRMWARE PACKAGE)
 
 $ ./adb shell
+
 $ ./su
+
 $ ./dd if=/dev/block/by-name/boot of=/sdcard/boot.img
+
 $ ./exit
+
 $ ./adb pull /sdcard/boot.img
 
     NOW FOR THE GOOD PART
 A. unpacking your boot.img
+
   $./magiskboot unpack boot.img
 
 you will now have 3 new files.
@@ -52,9 +60,11 @@ $ ./magiskboot cpio ramdisk.cpio "mkdir 0750 overlay.d"        # Create required
 NOW ITS TIME TO SIGN IT WITH.....WAIT FOR IT.....THE OFFICIAL AVB KEYS
 
 $ ./magiskboot sign boot.img      # [x509.pem pk8]  signing the img
+
 $ ./magiskboot verify boot.img    # [x509.pem] verification will tell you if its integrity was affected (look for something li "unexpected" in the bottom line.) it will also say primitive or permisive.. it will tell you if it worked....
 
 c. REPAACKING
+
 $ ./magiskboot repack boot.img
 
 your out put will be a rooted patched boot image in the same directory call new-boot.img
@@ -62,4 +72,5 @@ your out put will be a rooted patched boot image in the same directory call new-
 check out my script TEMPLATE (still in the works) which patches it for you and if uncommented, will also flash it with fastboot.
 
 OFFICIAL MAGISKBOOT MAN PAGE
+
 ./magiskboot --help
