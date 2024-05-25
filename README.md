@@ -57,15 +57,18 @@ $ ./magiskboot cpio ramdisk.cpio "patch"                       # Apply Magisk pa
 
 $ ./magiskboot cpio ramdisk.cpio "mkdir 0750 overlay.d"        # Create required directory
 
+
+c. REPAACKING
+
+$ ./magiskboot repack boot.img
+
+
 NOW ITS TIME TO SIGN IT WITH.....WAIT FOR IT.....THE OFFICIAL AVB KEYS
 
 $ ./magiskboot sign boot.img      # [x509.pem pk8]  signing the img
 
 $ ./magiskboot verify boot.img    # [x509.pem] verification will tell you if its integrity was affected (look for something li "unexpected" in the bottom line.) it will also say primitive or permisive.. it will tell you if it worked....
 
-c. REPAACKING
-
-$ ./magiskboot repack boot.img
 
 your out put will be a rooted patched boot image in the same directory call new-boot.img
 
