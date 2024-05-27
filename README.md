@@ -1,4 +1,4 @@
-USAGE: patch, sign, and verify your boot.img by hand. becuase why the hell not, and maybe im obssed with toying with firmware images. or maybe i have to much time on my hand, or maybe, just maybe, im paranoid and scared my phone is spying on me and therefore cant use magisk, so ill get crafty and patch it by hand ;)
+USAGE: patch, sign, and verify your boot.img by hand. becuase why the hell not, or maybe your obssed with toying with firmware images. or maybe you have to much time on my hand, or maybe, just maybe, your paranoid and scared your phone is spying on you and therefore cant use magisk, so let's get crafty and patch it by hand ;)
 
 #CREDITS
 All credits should be redirected to the absolute genius, Topjohnwu, the creater of the magic, and he also made magisk. (see what i did there)
@@ -6,7 +6,7 @@ All credits should be redirected to the absolute genius, Topjohnwu, the creater 
 # Magisk-Binaries
 magisk binaries extracted from a magisk apk i built from the source code, includes: the impossible to find: magiskboot, magiskinit, busybox, magisk, and more. this only supports devices with an arm64 architecture, working on the other ones.
 
-DO NOT USE THE SCRIPT UNLESS YOU ARE ABLE TO CUSTOMIZE IT AND FIX ANY ERRORS I MADE WHILE WRITING IT.  ADDITIONALLY THE SCRIPT HAS THE OPTION TO TAKE A REGULAR BOOT.IMG AND PATCH IT AND FLASH IT IN FASTBOOT FOR YOU. ONLY IF YOU UNCOMMENT THE LAST COUPLE LINES AND EDIT IT. (I AM GOING TO GET HELP FROM A ONE OF MY CLOSEST FRIENDS SE7EN (SHOT OUT TO HIM FOR ENCOURAGING ME TO DO ALL THE WORK IM DOING) PERFECTING THE SCRIPT)
+DO NOT USE THE SCRIPT UNLESS YOU ARE ABLE TO CUSTOMIZE IT AND FIX ANY ERRORS I MADE WHILE WRITING IT.  ADDITIONALLY THE SCRIPT HAS THE OPTION TO TAKE A REGULAR BOOT.IMG AND PATCH IT AND FLASH IT IN FASTBOOT FOR YOU. ONLY IF YOU UNCOMMENT THE LAST COUPLE LINES AND EDIT IT. (I AM GOING TO GET HELP FROM A ONE OF MY CLOSEST FRIENDS SE7EN (SHOUT OUT TO HIM FOR ENCOURAGING ME TO DO ALL THE WORK IM DOING) PERFECTING THE SCRIPT)
 HOW TO USE:
 im going to assume you know your way arount linux and git... so:
 1. Clone this repository  
@@ -69,8 +69,9 @@ $ ./magiskboot sign boot.img      # [x509.pem pk8]  signing the img
 
 $ ./magiskboot verify boot.img    # [x509.pem] verification will tell you if its integrity was affected (look for something li "unexpected" in the bottom line.) it will also say primitive or permisive.. it will tell you if it worked....
 
+(AT THIS POINT YOU MUST RESIZE THE IMAGE USING ./magiskboot....based on your phones boot.img partition size). maybe try the $ file boot.img  command to see the original size. 
 
-your out put will be a rooted patched boot image in the same directory call new-boot.img
+your output will be a magisk patched boot image in the same directory called new-boot.img
 
 check out my script TEMPLATE (still in the works) which patches it for you and if uncommented, will also flash it with fastboot.
 
